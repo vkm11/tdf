@@ -7,10 +7,13 @@ import { User } from './user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   // title = 'tdf';
   topics = ['Angular','React','JavaScript'];
 
-  userModel = new User('Vijay', 'vijay@gmail.com', 8191819156, '', 'morning', true);
+  userModel = new User('', 'vijay@gmail.com', 8191819156, '', 'morning', true);
 
 
 }
