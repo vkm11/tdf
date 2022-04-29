@@ -15,6 +15,9 @@ export class AppComponent {
   topics = ['Angular','React','JavaScript'];
   topicHasError = true;
 
+  submitted = false;
+  errorMsg ='';
+
   userModel = new User('vijay', 'vijay@gmail.com', 8191819156, 'default', 'morning', true);
 
   constructor(private _enrollmentServices: EnrollmentService){}
@@ -28,10 +31,11 @@ export class AppComponent {
   onSubmit(){
     // console.log(this.userModel)
 
+    this.submitted = true;
     this._enrollmentServices.enroll(this.userModel)
         .subscribe(
           data => console.log('Success!', data),
-          error => console.log('Error!', error)
+          error => this.errorMsg = error.statusText
           
         )
 
