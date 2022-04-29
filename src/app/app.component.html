@@ -70,13 +70,13 @@
 
       <input type="tel" #phone="ngModel" pattern="^\d{10}$" required 
          [class.is-invalid] ="phone.invalid && phone.touched "  class="form-control" name="phone" [(ngModel)] ="userModel.phone">
-      <!-- <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">Phone number is required and must be 10 digits</small> -->
+      <small class="text-danger" [class.d-none]="phone.valid || phone.untouched">Phone number is required and must be 10 digits</small>
       <!-- OR Separate error massage -->
 
-      <div *ngIf ="phone.errors && (phone.invalid || phone.touched)">
+      <!-- <div *ngIf ="phone.errors && (phone.invalid || phone.touched)">
         <small class="text-danger" *ngIf ="phone.errors.required">Phone number is required</small>
         <small class="text-danger" *ngIf ="phone.errors.pattern">Phone number must be 10 digits</small>
-      </div>
+      </div> -->
     
     </div>
 
